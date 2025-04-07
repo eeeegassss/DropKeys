@@ -1,0 +1,1 @@
+// Basic JavaScript game logic as described earlier
