@@ -1,1 +1,76 @@
-/* Basic styles and layout as described earlier */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial Black', sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.mode-btn {
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #4444ff, #88f);
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px white;
+  transition: transform 0.2s;
+}
+
+.mode-btn:active {
+  transform: scale(0.95);
+}
+
+#hud {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+#game-area {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+#keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.key {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background: #333;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
