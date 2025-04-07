@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b001f" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
   <title>DropKeys</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
-  <div id="game-container">
-    <div id="main-menu">
-      <h1>DROPKEYS</h1>
-      <div class="menu-buttons">
-        <button class="neon-button" data-mode="survival">Survival</button>
-        <button class="neon-button" data-mode="timeattack">Time Attack</button>
-        <button class="neon-button" data-mode="endless">Endless</button>
-        <button class="neon-button" data-mode="2player">2 Player</button>
-      </div>
+  <main id="app">
+    <h1>DROPKEYS</h1>
+    <div class="mode-buttons">
+      <button class="mode-btn" data-mode="survival">Survival</button>
+      <button class="mode-btn" data-mode="time">Time Attack</button>
+      <button class="mode-btn" data-mode="endless">Endless</button>
+      <button class="mode-btn" data-mode="2p">2 Player</button>
     </div>
-    <div id="game-screen" class="hidden">
-      <div id="hud">
-        <div id="score">Score: <span>0</span> <span class="sparkle">✨</span></div>
-        <div id="combo">Combo: <span>1x</span></div>
-        <div id="lives">Lives: <span>3</span></div>
-      </div>
-      <div id="play-field"></div>
-      <div id="keyboard"></div>
+    <div id="hud">
+      <p>Score: <span id="score">0</span> ✨</p>
+      <p>Combo: <span id="combo">1x</span></p>
+      <p>Lives: <span id="lives">3</span></p>
+      <p>P1 Score: <span id="p1score">0</span></p>
+      <p>P2 Score: <span id="p2score">0</span></p>
     </div>
-    <div id="game-screen-2player" class="hidden">
-      <div class="player-section" id="player1">
-        <div class="hud">P1 Score: <span>0</span></div>
-        <div class="play-field"></div>
-        <div class="keyboard"></div>
-      </div>
-      <div class="divider"></div>
-      <div class="player-section" id="player2">
-        <div class="hud">P2 Score: <span>0</span></div>
-        <div class="play-field"></div>
-        <div class="keyboard"></div>
-      </div>
-    </div>
-  </div>
-  <script src="js/game.js"></script>
+    <div id="game-area"></div>
+    <div id="keyboard"></div>
+  </main>
+  <script src="game.js" defer></script>
 </body>
 </html>
