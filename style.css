@@ -1,65 +1,85 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base Theme */
 body {
-  background-color: #1e1d24; /* Dark purple-black */
-  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121114;
   color: white;
-  height: 100vh;
 }
 
-/* Header */
-header {
+.header {
   display: flex;
   align-items: center;
-  padding: 20px 16px;
-  background-color: #1e1d24;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #121114;
 }
 
 .hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  border: 2px solid white;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  background-color: white;
+  height: 3px;
+  border-radius: 1px;
+}
+
+.title {
   font-size: 24px;
-  color: #bfbfbf;
-  margin-right: 12px;
+  font-weight: bold;
+  margin-left: auto;
 }
 
-header h1 {
-  font-size: 28px;
-  font-weight: 700;
+.divider {
+  height: 2px;
+  background-color: #999;
+  width: 100%;
 }
 
-/* Game Mode Grid */
-.mode-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
   padding: 20px;
 }
 
-.mode-card {
-  background-color: #2b2a33;
-  border-radius: 12px;
-  aspect-ratio: 3 / 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mode-button {
   position: relative;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.mode-card:hover {
-  transform: scale(1.03);
-}
-
-.mode-title {
+  background-color: #222;
+  border: 2px solid #999;
+  border-radius: 16px;
+  padding: 12px;
+  color: #FFD700;
   font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  color: #f9c400;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  height: 160px;
+  overflow: hidden;
+}
+
+.mode-button span {
+  z-index: 2;
+}
+
+.mode-button img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 1;
+  border-bottom-right-radius: 14px;
 }
