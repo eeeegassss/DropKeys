@@ -1,62 +1,66 @@
-/* Reset + Basics */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
 body {
   background-color: #1a1a1a;
   color: #fff;
+  min-height: 100vh;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
-}
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
 }
 
-/* Top Bar */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 16px;
-  background-color: #2a2a2a;
-}
-.header .settings-btn {
-  width: 28px;
-  height: 28px;
-  background-image: url('icons/gear.svg'); /* replace with your icon */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.header .title {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
+  background-color: #1a1a1a;
 }
 
-/* Game Grid */
+.settings-btn {
+  width: 32px;
+  height: 32px;
+  background: url('icons/menu-dark.svg') no-repeat center center;
+  background-size: 24px 24px;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+}
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   padding: 16px;
 }
+
+/* Game Button */
 .game-button {
   position: relative;
-  background-color: #2d2d2d;
-  border-radius: 16px;
+  background-color: #2b2b2b;
+  border-radius: 20px;
   overflow: hidden;
   height: 160px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
+
 .game-button img {
   position: absolute;
   width: 100%;
@@ -64,15 +68,16 @@ button {
   object-fit: cover;
   z-index: 1;
 }
-.game-button .label {
+
+.label {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   padding: 6px 10px;
-  border-bottom-right-radius: 12px;
+  border-bottom-right-radius: 10px;
   font-size: 14px;
   font-weight: 700;
-  color: #ffc500;
-  text-transform: uppercase;
+  color: #ffc400;
   margin: 8px;
+  text-transform: uppercase;
 }
