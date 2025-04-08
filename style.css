@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Helvetica', sans-serif;
-  background: #121212;
+  background: linear-gradient(#0f001f, #000);
   color: #fff;
   text-align: center;
   overflow: hidden;
@@ -22,17 +22,18 @@ h1, h2 {
 
 button {
   padding: 1em 2em;
-  margin: 1em;
+  margin: 0.5em;
   font-size: 1.2em;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: #ff5e5e;
   color: white;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #e44;
+  background-color: #e04444;
 }
 
 input[type=range] {
