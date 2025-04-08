@@ -1,77 +1,99 @@
-body {
+/* Reset */
+body, h1, h2, h3, p, ul {
   margin: 0;
-  background-color: #0e0e0e;
-  color: #f1f1f1;
-  font-family: sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app-header {
+/* Background and Body Styling */
+body {
+  background-color: #0A0A12; /* Dark purple-almost-black */
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+}
+
+/* Top Nav */
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
-  background-color: #0e0e0e;
+  padding: 20px;
 }
 
-.title {
-  margin: 0;
+.menu-icon {
   font-size: 24px;
-  font-weight: bold;
   color: white;
-}
-
-.hamburger {
-  width: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
-  cursor: pointer;
-  padding: 4px;
-  border: 2px solid white;
-  border-radius: 4px;
-}
-
-.hamburger div {
-  height: 3px;
-  background-color: white;
-}
-
-.divider {
+  background: none;
   border: none;
-  height: 1px;
-  background-color: #777;
-  margin: 0 16px;
+  border-radius: 12px;
+  padding: 8px;
+  transition: background 0.3s;
 }
 
-.card-grid {
+.menu-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Title Box */
+.title-box {
+  background-color: #00D1FF; /* Vibrant cyan */
+  padding: 6px 16px;
+  border-radius: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  box-shadow: 0 0 12px rgba(0, 209, 255, 0.3);
+}
+
+/* Game Modes Container */
+.mode-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 24px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* Individual Mode Button */
+.mode-button {
+  background-color: #1A1A28;
+  border: 3px solid #3A3A4F; /* Thick outline */
+  border-radius: 16px;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 16px;
-}
-
-.card {
   position: relative;
-  background-color: #1a1a1a;
-  border: 2px solid #777;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
 
-.card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  display: block;
+.mode-button:hover {
+  transform: scale(1.05);
+  background-color: #24243A;
 }
 
-.label {
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  color: #ffcc00;
+/* Yellow Game Mode Title */
+.mode-title {
+  font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: 1px 1px black;
+  color: #FFD700; /* Bright gold/yellow */
+}
+
+/* Hide duplicated text (if it's being inserted under the button title) */
+.mode-description {
+  display: none;
+}
+
+/* Bottom nav (optional if you're using it) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background-color: #0A0A12;
+  display: flex;
+  justify-content: space-around;
+  border-top: 2px solid #1A1A28;
 }
