@@ -4,52 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropKeys</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/icons/icon.png" />
-
-  <!-- Manifest for PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#1b1c1d" />
-
-  <!-- Styles -->
+  <link rel="icon" type="image/png" href="icon.png" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1b1c1d" />
 </head>
 <body>
-
   <header>
-    <div class="menu-icon">&#9776;</div>
-    <div class="title-pill">DropKeys</div>
+    <button id="menu-btn">&#9776;</button>
+    <div id="title-pill">DropKeys</div>
   </header>
-  <hr class="divider" />
+  <hr />
 
-  <main class="menu-grid" id="main-menu">
-    <button class="menu-button" id="survival-btn" style="background-image: url('assets/buttons/survival.jpg');">
-      <span class="mode-label survival">SURVIVAL</span>
-    </button>
-    <button class="menu-button" id="time-btn" style="background-image: url('assets/buttons/time.jpg');">
-      <span class="mode-label time">TIME ATTACK</span>
-    </button>
-    <button class="menu-button" id="endless-btn" style="background-image: url('assets/buttons/endless.jpg');">
-      <span class="mode-label endless">ENDLESS</span>
-    </button>
-    <button class="menu-button" id="two-player-btn" style="background-image: url('assets/buttons/2player.jpg');">
-      <span class="mode-label twoplayer">2 PLAYER</span>
-    </button>
+  <main id="menu-screen">
+    <div class="grid">
+      <div class="mode-btn" data-mode="survival">
+        <span class="label">SURVIVAL</span>
+        <img src="assets/buttons/survival.jpg" alt="Survival" />
+      </div>
+      <div class="mode-btn" data-mode="time">
+        <span class="label">TIME ATTACK</span>
+        <img src="assets/buttons/time.jpg" alt="Time Attack" />
+      </div>
+      <div class="mode-btn" data-mode="endless">
+        <span class="label">ENDLESS</span>
+        <img src="assets/buttons/endless.jpg" alt="Endless" />
+      </div>
+      <div class="mode-btn" data-mode="2p">
+        <span class="label">2 PLAYER</span>
+        <img src="assets/buttons/2p.jpg" alt="2 Player" />
+      </div>
+    </div>
   </main>
 
-  <div id="game-container" class="hidden">
-    <div id="game-header">
-      <button id="quit-btn">←</button>
-      <div id="game-info"></div>
+  <main id="game-screen" class="hidden">
+    <div id="hud">
+      <span id="score">0</span>
+      <span id="status"></span>
+      <button id="quit-btn">Quit</button>
     </div>
-    <canvas id="game-canvas"></canvas>
-    <div id="keyboard-helper"></div>
-  </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="keyboard"></div>
+  </main>
 
-  <script src="main.js" type="module"></script>
+  <script src="game.js"></script>
 </body>
 </html>
