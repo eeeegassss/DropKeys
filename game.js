@@ -1,41 +1,14 @@
-let selectedMode = '';
-let selectedDifficulty = 'Medium';
-let isFriendGame = false;
+// DROPKEYS: Main Menu UI Controller
 
-const difficultyMap = {
-  1: 'Easy',
-  2: 'Medium',
-  3: 'Hard'
-};
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DropKeys Main Menu Loaded");
 
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(screen => {
-    screen.classList.add('hidden');
-    screen.classList.remove('active');
+  // Add event listeners to buttons
+  const modes = document.querySelectorAll(".menu-btn");
+  modes.forEach(button => {
+    button.addEventListener("click", () => {
+      alert(`Mode Selected: ${button.textContent}`);
+      // Future: loadGameMode(button.classList[1])
+    });
   });
-
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.remove('hidden');
-    target.classList.add('active');
-  }
-}
-
-function selectMode(mode) {
-  selectedMode = mode;
-  showScreen('difficultyMenu');
-}
-
-document.getElementById('difficultySlider').addEventListener('input', e => {
-  const val = parseInt(e.target.value);
-  selectedDifficulty = difficultyMap[val];
-  document.getElementById('difficultyLabel').textContent = selectedDifficulty;
 });
-
-function startGame(friend = false) {
-  isFriendGame = friend;
-  document.getElementById('currentMode').textContent = selectedMode;
-  document.getElementById('currentDifficulty').textContent = selectedDifficulty;
-  document.getElementById('friendLabel').classList.toggle('hidden', !isFriendGame);
-  showScreen('gameScreen');
-}
