@@ -1,13 +1,24 @@
 let selectedMode = '';
-let difficulty = 2;
+let selectedDifficulty = 'Medium';
+let isFriendGame = false;
+
+const difficultyMap = {
+  1: 'Easy',
+  2: 'Medium',
+  3: 'Hard'
+};
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(screen => {
-    screen.classList.remove('active');
     screen.classList.add('hidden');
+    screen.classList.remove('active');
   });
-  document.getElementById(id).classList.add('active');
-  document.getElementById(id).classList.remove('hidden');
+
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.remove('hidden');
+    target.classList.add('active');
+  }
 }
 
 function selectMode(mode) {
@@ -15,23 +26,16 @@ function selectMode(mode) {
   showScreen('difficultyMenu');
 }
 
-document.getElementById('difficultySlider').addEventListener('input', function () {
-  difficulty = parseInt(this.value);
-  const label = ['Easy', 'Medium', 'Hard'][difficulty - 1];
-  document.getElementById('difficultyLabel').textContent = label;
+document.getElementById('difficultySlider').addEventListener('input', e => {
+  const val = parseInt(e.target.value);
+  selectedDifficulty = difficultyMap[val];
+  document.getElementById('difficultyLabel').textContent = selectedDifficulty;
 });
 
-function startGame() {
-  showScreen('gameScreen');
+function startGame(friend = false) {
+  isFriendGame = friend;
   document.getElementById('currentMode').textContent = selectedMode;
-  document.getElementById('currentDifficulty').textContent = ['Easy', 'Medium', 'Hard'][difficulty - 1];
-  // TODO: Add your actual game logic here
+  document.getElementById('currentDifficulty').textContent = selectedDifficulty;
+  document.getElementById('friendLabel').classList.toggle('hidden', !isFriendGame);
+  showScreen('gameScreen');
 }
-
-function playWithFriend() {
-  alert(`Multiplayer mode coming soon! (${selectedMode} - ${['Easy','Medium','Hard'][difficulty-1]})`);
-  // TODO: Hook up multiplayer later
-}
-
-// Init on first load
-showScreen('homeScreen');
