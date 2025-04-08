@@ -7,24 +7,39 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="hamburger">☰</div>
-    <h1>DropKeys</h1>
-  </header>
+  <div class="header">
+    <div class="hamburger" onclick="notify('Hamburger clicked')">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="title">DropKeys</div>
+  </div>
+  <div class="divider"></div>
 
-  <main class="mode-grid">
-    <div class="mode-card">
-      <span class="mode-title">SURVIVAL</span>
+  <div class="grid">
+    <div class="mode-button" onclick="notify('Survival clicked')">
+      <span>Survival</span>
+      <img src="AFAC5780-3C13-440B-9A2A-0C97C8841E40.jpeg" alt="Survival" />
     </div>
-    <div class="mode-card">
-      <span class="mode-title">TIME ATTACK</span>
+    <div class="mode-button" onclick="notify('Time Attack clicked')">
+      <span>Time Attack</span>
+      <img src="E085D814-1224-440C-94A2-DF98D0FB5958.jpeg" alt="Time Attack" />
     </div>
-    <div class="mode-card">
-      <span class="mode-title">ENDLESS</span>
+    <div class="mode-button" onclick="notify('Endless clicked')">
+      <span>Endless</span>
+      <img src="AFAC5780-3C13-440B-9A2A-0C97C8841E40.jpeg" alt="Endless" />
     </div>
-    <div class="mode-card">
-      <span class="mode-title">2 PLAYER</span>
+    <div class="mode-button" onclick="notify('2 Player clicked')">
+      <span>2 Player</span>
+      <img src="E085D814-1224-440C-94A2-DF98D0FB5958.jpeg" alt="2 Player" />
     </div>
-  </main>
+  </div>
+
+  <script>
+    function notify(message) {
+      alert(message);
+    }
+  </script>
 </body>
 </html>
