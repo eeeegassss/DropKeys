@@ -1,136 +1,100 @@
-const menu = document.getElementById('menu');
-const game = document.getElementById('game');
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
-const keyboard = document.getElementById('keyboard');
-const gameInfo = document.getElementById('gameInfo');
-const scoreDisplay = document.getElementById('scoreDisplay');
-
-const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const colors = ['#e74c3c', '#f1c40f', '#2ecc71', '#3498db'];
-
-let mode = '';
+const canvas = document.getElementById("game-canvas");
+const ctx = canvas.getContext("2d");
+const scoreEl = document.getElementById("score");
+const livesEl = document.getElementById("lives");
+const timerEl = document.getElementById("timer");
+const keyboardEl = document.getElementById("keyboard");
+let currentMode = "endless";
+let letters = [];
 let score = 0;
 let lives = 3;
-let timer = 60;
-let multiplier = 1;
-let blocks = [];
-let interval;
-let fallSpeed = 1;
+let timeLeft = 60;
+let dropInterval = 1000;
+let gameInterval;
+let timerInterval;
+let isGameRunning = false;
 
-function randomLetter() {
-  return letters[Math.floor(Math.random() * letters.length)];
-}
-function randomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function createBlock() {
-  const block = {
-    x: Math.random() * (canvas.width - 30),
-    y: -30,
-    char: randomLetter(),
-    color: randomColor()
-  };
-  blocks.push(block);
-}
-
-function drawBlocks() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let b of blocks) {
-    ctx.fillStyle = b.color;
-    ctx.fillRect(b.x, b.y, 30, 30);
-    ctx.fillStyle = 'white';
-    ctx.font = '20px Arial';
-    ctx.fillText(b.char, b.x + 8, b.y + 22);
-  }
-}
-
-function updateBlocks() {
-  for (let b of blocks) {
-    b.y += fallSpeed;
-    if (b.y > canvas.height) {
-      if (mode === 'survival') lives--;
-      if (mode === 'endless') multiplier = 1;
-      blocks.splice(blocks.indexOf(b), 1);
-    }
-  }
-}
-
-function gameLoop() {
-  updateBlocks();
-  drawBlocks();
-  gameInfo.innerHTML =
-    mode === 'survival' ? '❤'.repeat(lives) :
-    mode === 'time' ? `⏱ ${timer}` :
-    '';
-  scoreDisplay.innerHTML =
-    mode === 'endless' ? `${score} <span style="color:red">${multiplier}x</span>` : score;
-
-  if (lives <= 0 || timer <= 0) {
-    endGame();
-  }
-}
-
-function keyPress(char) {
-  for (let i = 0; i < blocks.length; i++) {
-    if (blocks[i].char === char) {
-      blocks.splice(i, 1);
-      score += 10 * multiplier;
-      if (mode === 'endless') multiplier++;
-      return;
-    }
-  }
-  if (mode === 'survival') lives--;
-  if (mode === 'endless') multiplier = 1;
-}
-
-function startGame(selectedMode) {
-  mode = selectedMode;
-  menu.style.display = 'none';
-  game.style.display = 'flex';
-  blocks = [];
+function startGame(mode) {
+  currentMode = mode;
+  document.getElementById("main-menu").classList.add("hidden");
+  document.getElementById("game-screen").classList.remove("hidden");
   score = 0;
-  lives = 2;
-  timer = 60;
-  multiplier = 1;
+  lives = 3;
+  timeLeft = 60;
+  letters = [];
+  createKeyboard();
+  resizeCanvas();
+  if (mode === "time") startTimer();
+  gameInterval = setInterval(updateGame, dropInterval);
+  isGameRunning = true;
+}
 
-  clearInterval(interval);
-  interval = setInterval(() => {
-    createBlock();
-    gameLoop();
-  }, 500);
+function quitGame() {
+  clearInterval(gameInterval);
+  clearInterval(timerInterval);
+  isGameRunning = false;
+  document.getElementById("main-menu").classList.remove("hidden");
+  document.getElementById("game-screen").classList.add("hidden");
+}
 
-  if (mode === 'time') {
-    let countdown = setInterval(() => {
-      timer--;
-      if (timer <= 0) clearInterval(countdown);
-    }, 1000);
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+    if (timeLeft <= 0) quitGame();
+  }, 1000);
+}
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight * 0.6;
+}
+
+function createKeyboard() {
+  keyboardEl.innerHTML = "";
+  for (let i = 65; i <= 90; i++) {
+    const char = String.fromCharCode(i);
+    const btn = document.createElement("button");
+    btn.textContent = char;
+    btn.onclick = () => pressKey(char);
+    keyboardEl.appendChild(btn);
   }
 }
 
-function endGame() {
-  clearInterval(interval);
-  alert(`Game Over! Your score: ${score}`);
-  menu.style.display = 'block';
-  game.style.display = 'none';
+function pressKey(char) {
+  const index = letters.findIndex(l => l.letter === char);
+  if (index > -1) {
+    letters.splice(index, 1);
+    score++;
+    scoreEl.textContent = score;
+  }
 }
 
-document.querySelector('.survival').onclick = () => startGame('survival');
-document.querySelector('.time').onclick = () => startGame('time');
-document.querySelector('.endless').onclick = () => startGame('endless');
-document.querySelector('.two').onclick = () => alert('2P Mode Coming Soon!');
+function updateGame() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-document.getElementById('backBtn').onclick = () => {
-  clearInterval(interval);
-  menu.style.display = 'block';
-  game.style.display = 'none';
-};
+  if (Math.random() < 0.3) {
+    letters.push({
+      letter: String.fromCharCode(65 + Math.floor(Math.random() * 26)),
+      x: Math.random() * (canvas.width - 20),
+      y: 0
+    });
+  }
 
-// Render on-screen keyboard
-letters.forEach(letter => {
-  const btn = document.createElement('button');
-  btn.innerText = letter;
-  btn.onclick = () => keyPress(letter);
-  keyboard.appendChild(btn);
-});
+  letters.forEach((l, i) => {
+    l.y += 5;
+    ctx.fillStyle = "white";
+    ctx.font = "30px Arial";
+    ctx.fillText(l.letter, l.x, l.y);
+    if (l.y > canvas.height) {
+      letters.splice(i, 1);
+      if (currentMode === "survival") {
+        lives--;
+        livesEl.textContent = "♥".repeat(lives);
+        if (lives <= 0) quitGame();
+      }
+    }
+  });
+}
+
+window.addEventListener("resize", resizeCanvas);
