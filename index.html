@@ -2,29 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>DropKeys</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="game.js" defer></script>
 </head>
 <body>
+
+  <!-- Top Bar -->
   <div class="header">
-    <button class="menu-btn">☰</button>
-    <span class="title">DropKeys</span>
+    <button class="settings-btn" title="Settings"></button>
+    <div class="title">DropKeys</div>
   </div>
 
-  <div class="game-grid">
-    <div class="game-button" style="background-image: url('images/survival.jpg')">
-      <span class="label">Survival</span>
-    </div>
-    <div class="game-button" style="background-image: url('images/time.jpg')">
-      <span class="label">Time Attack</span>
-    </div>
-    <div class="game-button" style="background-image: url('images/endless.jpg')">
-      <span class="label">Endless</span>
-    </div>
-    <div class="game-button" style="background-image: url('images/2player.jpg')">
-      <span class="label">2 Player</span>
-    </div>
+  <!-- Main Menu Grid -->
+  <div class="grid">
+    <button class="game-button" data-mode="Survival">
+      <img src="images/survival.jpg" alt="Survival Mode">
+      <div class="label">Survival</div>
+    </button>
+    <button class="game-button" data-mode="Time Attack">
+      <img src="images/time.jpg" alt="Time Attack Mode">
+      <div class="label">Time Attack</div>
+    </button>
+    <button class="game-button" data-mode="Endless">
+      <img src="images/endless.jpg" alt="Endless Mode">
+      <div class="label">Endless</div>
+    </button>
+    <button class="game-button" data-mode="2 Player">
+      <img src="images/2player.jpg" alt="2 Player Mode">
+      <div class="label">2 Player</div>
+    </button>
   </div>
+
 </body>
 </html>
