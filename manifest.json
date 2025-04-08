@@ -1,16 +1,22 @@
 {
   "name": "DropKeys",
   "short_name": "DropKeys",
+  "description": "Dodge the wrong keys, type the right ones!",
   "start_url": "index.html",
   "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ffc500",
   "orientation": "portrait",
-  "background_color": "#12112f",
-  "theme_color": "#12112f",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
-}
+}}
