@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>DropKeys</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
 </head>
 <body>
-  <header class="app-header">
-    <div class="hamburger" onclick="showAlert('Hamburger')">
-      <div></div><div></div><div></div>
-    </div>
-    <h1 class="title">DropKeys</h1>
+  <!-- Header with hamburger and title -->
+  <header class="navbar">
+    <button class="hamburger" onclick="notify('Hamburger clicked')">
+      &#9776;
+    </button>
+    <h1 class="title-box">DropKeys</h1>
   </header>
-
-  <hr class="divider"/>
-
-  <main class="card-grid">
-    <div class="card" onclick="showAlert('Survival')">
-      <img src="images/survival.jpeg" alt="Survival"/>
-      <span class="label">Survival</span>
+  <!-- Divider line under header -->
+  <hr class="divider">
+  
+  <!-- Main menu: 2x2 grid of game mode buttons -->
+  <main class="mode-grid">
+    <div class="mode-card" onclick="notify('Survival clicked')">
+      <!-- The image background can be replaced by editing the inline style or through CSS -->
+      <img src="images/survival.jpg" alt="Survival Mode">
+      <span class="mode-title">Survival</span>
     </div>
-    <div class="card" onclick="showAlert('Time Attack')">
-      <img src="images/time_attack.jpeg" alt="Time Attack"/>
-      <span class="label">Time Attack</span>
+    <div class="mode-card" onclick="notify('Time Attack clicked')">
+      <img src="images/time_attack.jpg" alt="Time Attack">
+      <span class="mode-title">Time Attack</span>
     </div>
-    <div class="card" onclick="showAlert('Endless')">
-      <img src="images/endless.jpeg" alt="Endless"/>
-      <span class="label">Endless</span>
+    <div class="mode-card" onclick="notify('Endless clicked')">
+      <img src="images/endless.jpg" alt="Endless">
+      <span class="mode-title">Endless</span>
     </div>
-    <div class="card" onclick="showAlert('2 Player')">
-      <img src="images/2player.jpeg" alt="2 Player"/>
-      <span class="label">2 Player</span>
+    <div class="mode-card" onclick="notify('2 Player clicked')">
+      <img src="images/twoplayer.jpg" alt="2 Player">
+      <span class="mode-title">2 Player</span>
     </div>
   </main>
-
-  <script src="game.js"></script>
 </body>
 </html>
