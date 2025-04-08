@@ -1,14 +1,18 @@
-// DROPKEYS: Main Menu UI Controller
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DropKeys Main Menu Loaded");
+  const buttons = document.querySelectorAll(".game-button");
 
-  // Add event listeners to buttons
-  const modes = document.querySelectorAll(".menu-btn");
-  modes.forEach(button => {
+  buttons.forEach(button => {
     button.addEventListener("click", () => {
-      alert(`Mode Selected: ${button.textContent}`);
-      // Future: loadGameMode(button.classList[1])
+      const mode = button.querySelector(".label").innerText.trim();
+      alert(`Launching ${mode} mode...`);
+      // Here you'd navigate or launch the game mode
     });
   });
+
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker Registered'))
+      .catch(err => console.error('Service Worker failed:', err));
+  }
 });
