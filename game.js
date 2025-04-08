@@ -7,8 +7,7 @@ const livesEl = document.getElementById('lives');
 let score = 0;
 let combo = 1;
 let lives = 3;
-
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split([]);
 
 function spawnKeyboard() {
   letters.forEach(letter => {
@@ -25,16 +24,14 @@ function spawnLetter() {
   const div = document.createElement('div');
   div.className = 'falling-letter';
   div.textContent = letter;
-  div.style.position = 'absolute';
   div.style.left = `${Math.random() * 80 + 10}%`;
   div.style.top = '0%';
-  div.style.fontSize = '2rem';
-  div.style.transition = 'top 3s linear';
   gameArea.appendChild(div);
 
-  setTimeout(() => {
+  requestAnimationFrame(() => {
+    div.style.transition = 'top 3s linear';
     div.style.top = '90%';
-  }, 50);
+  });
 
   setTimeout(() => {
     if (gameArea.contains(div)) {
@@ -55,7 +52,7 @@ function handleKey(letter) {
     combo++;
   } else {
     combo = 1;
-    navigator.vibrate(200);
+    navigator.vibrate?.(100);
   }
   updateHUD();
 }
@@ -65,13 +62,6 @@ function updateHUD() {
   comboEl.textContent = combo + 'x';
 }
 
-document.querySelectorAll('.mode-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    resetGame();
-    setInterval(spawnLetter, 1500);
-  });
-});
-
 function resetGame() {
   score = 0;
   combo = 1;
@@ -79,5 +69,12 @@ function resetGame() {
   updateHUD();
   gameArea.innerHTML = '';
 }
+
+document.querySelectorAll('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    resetGame();
+    setInterval(spawnLetter, 1500);
+  });
+});
 
 spawnKeyboard();
