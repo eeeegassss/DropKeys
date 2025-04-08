@@ -1,35 +1,104 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #2c003e, #000428);
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#game-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-/* Example of a glowing button */
-.button {
-  display: inline-block;
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 1.5em;
-  color: #fff;
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+  font-family: 'Arial Black', sans-serif;
+  background: linear-gradient(to bottom, #0b001f, #000000);
+  color: white;
   text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px rgba(255, 0, 204, 1);
+h1.logo {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 12px #88f;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.mode-btn {
+  padding: 12px 20px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #4444ff, #88f);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 12px white;
+  transition: transform 0.2s ease;
+}
+
+.mode-btn:active {
+  transform: scale(0.95);
+}
+
+#hud {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+#power-ups {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+.power-up {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: gold;
+  box-shadow: 0 0 8px gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+#game-area {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+#keyboard, #keyboard2p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  z-index: 2;
+}
+
+#keyboard2p {
+  top: 0;
+  bottom: auto;
+}
+
+.key {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  background: #333;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
