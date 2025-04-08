@@ -18,9 +18,9 @@
   <!-- Game Mode Select -->
   <div id="modeMenu" class="screen hidden">
     <h2>Select Game Mode</h2>
-    <button onclick="selectMode('survival')">Survival</button>
-    <button onclick="selectMode('time')">Time Attack</button>
-    <button onclick="selectMode('endless')">Endless</button>
+    <button onclick="selectMode('Survival')">Survival</button>
+    <button onclick="selectMode('Time Attack')">Time Attack</button>
+    <button onclick="selectMode('Endless')">Endless</button>
     <button onclick="showScreen('homeScreen')">Back</button>
   </div>
 
@@ -30,15 +30,16 @@
     <input type="range" min="1" max="3" value="2" id="difficultySlider" />
     <p id="difficultyLabel">Medium</p>
     <button onclick="startGame()">Play</button>
-    <button onclick="playWithFriend()">Play vs Friend</button>
+    <button onclick="startGame(true)">Play vs Friend</button>
     <button onclick="showScreen('modeMenu')">Back</button>
   </div>
 
-  <!-- Game Screen Placeholder -->
+  <!-- Game Screen -->
   <div id="gameScreen" class="screen hidden">
     <h2>Game Screen</h2>
     <p>Mode: <span id="currentMode"></span></p>
     <p>Difficulty: <span id="currentDifficulty"></span></p>
+    <p id="friendLabel" class="hidden">You are playing with a friend!</p>
     <button onclick="showScreen('homeScreen')">Exit</button>
   </div>
 
