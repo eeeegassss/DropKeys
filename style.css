@@ -1,83 +1,71 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
+/* DropKeys Style */
 
 body {
-  background-color: #1a1a1a;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #18171d; /* Dark purple-black */
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
-.header {
+
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  background-color: #1a1a1a;
+  justify-content: space-between;
+  padding: 20px 16px;
+  background-color: #18171d;
 }
 
-.settings-btn {
-  width: 32px;
-  height: 32px;
-  background: url('icons/menu-dark.svg') no-repeat center center;
-  background-size: 24px 24px;
-  background-color: #2a2a2a;
+.hamburger {
+  font-size: 28px;
+  color: #2d2c32; /* subtle darker tone of background */
+  background: none;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
 }
 
-.title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: none;
+header h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
 }
 
-/* Grid */
-.grid {
+/* Grid of game modes */
+
+.mode-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  padding: 16px;
+  gap: 20px;
+  padding: 20px;
+  flex-grow: 1;
+  box-sizing: border-box;
 }
 
-/* Game Button */
-.game-button {
-  position: relative;
-  background-color: #2b2b2b;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 160px;
+.mode-card {
+  background-color: #232228;
+  border-radius: 12px;
+  aspect-ratio: 3 / 4;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-}
-
-.game-button img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.label {
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 2px #000;
   position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 6px 10px;
-  border-bottom-right-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffc400;
-  margin: 8px;
-  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+.mode-card:hover {
+  transform: scale(1.03);
+}
+
+.mode-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
