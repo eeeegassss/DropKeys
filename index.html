@@ -4,42 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DropKeys</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="header">
-    <div class="hamburger" onclick="notify('Hamburger clicked')">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+  <header class="app-header">
+    <div class="hamburger" onclick="showAlert('Hamburger')">
+      <div></div><div></div><div></div>
     </div>
-    <div class="title">DropKeys</div>
-  </div>
-  <div class="divider"></div>
+    <h1 class="title">DropKeys</h1>
+  </header>
 
-  <div class="grid">
-    <div class="mode-button" onclick="notify('Survival clicked')">
-      <span>Survival</span>
-      <img src="AFAC5780-3C13-440B-9A2A-0C97C8841E40.jpeg" alt="Survival" />
-    </div>
-    <div class="mode-button" onclick="notify('Time Attack clicked')">
-      <span>Time Attack</span>
-      <img src="E085D814-1224-440C-94A2-DF98D0FB5958.jpeg" alt="Time Attack" />
-    </div>
-    <div class="mode-button" onclick="notify('Endless clicked')">
-      <span>Endless</span>
-      <img src="AFAC5780-3C13-440B-9A2A-0C97C8841E40.jpeg" alt="Endless" />
-    </div>
-    <div class="mode-button" onclick="notify('2 Player clicked')">
-      <span>2 Player</span>
-      <img src="E085D814-1224-440C-94A2-DF98D0FB5958.jpeg" alt="2 Player" />
-    </div>
-  </div>
+  <hr class="divider"/>
 
-  <script>
-    function notify(message) {
-      alert(message);
-    }
-  </script>
+  <main class="card-grid">
+    <div class="card" onclick="showAlert('Survival')">
+      <img src="images/survival.jpeg" alt="Survival"/>
+      <span class="label">Survival</span>
+    </div>
+    <div class="card" onclick="showAlert('Time Attack')">
+      <img src="images/time_attack.jpeg" alt="Time Attack"/>
+      <span class="label">Time Attack</span>
+    </div>
+    <div class="card" onclick="showAlert('Endless')">
+      <img src="images/endless.jpeg" alt="Endless"/>
+      <span class="label">Endless</span>
+    </div>
+    <div class="card" onclick="showAlert('2 Player')">
+      <img src="images/2player.jpeg" alt="2 Player"/>
+      <span class="label">2 Player</span>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
 </body>
 </html>
