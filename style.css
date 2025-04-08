@@ -2,36 +2,35 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial Black', sans-serif;
-  background: black;
+  background: radial-gradient(#000022, #000000);
   color: white;
-  text-align: center;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-top: 1rem;
-  color: #ffffff;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  text-shadow: 0 0 10px #00f, 0 0 20px #0ff;
 }
 
 .mode-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin: 2rem 1rem;
+  gap: 10px;
 }
 
 .mode-btn {
-  padding: 10px 16px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #4444ff, #88f);
-  color: white;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 1.2rem;
   font-weight: bold;
+  background: linear-gradient(135deg, #0066ff, #66ccff);
   border: none;
-  outline: none;
-  box-shadow: 0 0 10px white;
-  transition: transform 0.2s;
+  color: white;
+  box-shadow: 0 0 12px #00f;
 }
 
 .mode-btn:active {
@@ -39,8 +38,11 @@ h1 {
 }
 
 #hud {
+  text-align: center;
   margin: 1rem 0;
   font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 #game-area {
@@ -52,25 +54,26 @@ h1 {
 #keyboard {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: #222;
+  width: 100%;
+  background: #111;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px 0;
+  border-top: 2px solid #444;
 }
+
 .key {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
   background: #333;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 6px #fff;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  margin: 5px;
+  font-size: 1.3rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 6px #00f;
   user-select: none;
 }
