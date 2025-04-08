@@ -1,62 +1,56 @@
-/* DropKeys Style */
-
-body {
+/* Global Reset */
+* {
   margin: 0;
   padding: 0;
-  background-color: #18171d; /* Dark purple-black */
+  box-sizing: border-box;
+}
+
+/* Base Theme */
+body {
+  background-color: #1e1d24; /* Dark purple-black */
   font-family: 'Helvetica Neue', sans-serif;
   color: white;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Header */
-
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 16px;
-  background-color: #18171d;
+  background-color: #1e1d24;
 }
 
 .hamburger {
-  font-size: 28px;
-  color: #2d2c32; /* subtle darker tone of background */
-  background: none;
-  border: none;
-  cursor: pointer;
+  font-size: 24px;
+  color: #bfbfbf;
+  margin-right: 12px;
 }
 
 header h1 {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 0;
-  color: white;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-/* Grid of game modes */
-
+/* Game Mode Grid */
 .mode-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
-  flex-grow: 1;
-  box-sizing: border-box;
 }
 
 .mode-card {
-  background-color: #232228;
+  background-color: #2b2a33;
   border-radius: 12px;
   aspect-ratio: 3 / 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 2px #000;
   position: relative;
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .mode-card:hover {
@@ -64,8 +58,8 @@ header h1 {
 }
 
 .mode-title {
-  font-size: 18px;
   font-weight: bold;
+  font-size: 18px;
   text-align: center;
-  color: white;
+  color: #f9c400;
 }
