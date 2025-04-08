@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#000000" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DropKeys</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="main-menu">
-    <h1>DROPKEYS</h1>
-    <div class="mode-buttons">
-      <button class="mode-btn" data-mode="survival">Survival</button>
-      <button class="mode-btn" data-mode="time">Time Attack</button>
-      <button class="mode-btn" data-mode="endless">Endless</button>
-      <button class="mode-btn" data-mode="2p">2 Player</button>
-    </div>
+  <div id="game-container">
+    <!-- Game elements will be dynamically added here -->
   </div>
-
-  <div id="hud">
-    <p>Score: <span id="score">0</span></p>
-    <p>Combo: <span id="combo">1x</span></p>
-    <p>Lives: <span id="lives">3</span></p>
-  </div>
-
-  <div id="game-area"></div>
-  <div id="keyboard"></div>
-
-  <script src="game.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
