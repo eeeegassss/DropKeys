@@ -1,85 +1,77 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #121114;
-  color: white;
+  background-color: #0e0e0e;
+  color: #f1f1f1;
+  font-family: sans-serif;
 }
 
-.header {
+.app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  background-color: #121114;
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 26px;
-  height: 20px;
-  border: 2px solid white;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.hamburger .line {
-  background-color: white;
-  height: 3px;
-  border-radius: 1px;
+  background-color: #0e0e0e;
 }
 
 .title {
+  margin: 0;
   font-size: 24px;
   font-weight: bold;
-  margin-left: auto;
+  color: white;
+}
+
+.hamburger {
+  width: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.hamburger div {
+  height: 3px;
+  background-color: white;
 }
 
 .divider {
-  height: 2px;
-  background-color: #999;
-  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #777;
+  margin: 0 16px;
 }
 
-.grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  padding: 20px;
+  padding: 16px;
 }
 
-.mode-button {
+.card {
   position: relative;
-  background-color: #222;
-  border: 2px solid #999;
-  border-radius: 16px;
-  padding: 12px;
-  color: #FFD700;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  height: 160px;
+  background-color: #1a1a1a;
+  border: 2px solid #777;
+  border-radius: 12px;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.mode-button span {
-  z-index: 2;
-}
-
-.mode-button img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.card img {
   width: 100%;
-  height: 100%;
+  height: 120px;
   object-fit: cover;
-  opacity: 0.15;
-  z-index: 1;
-  border-bottom-right-radius: 14px;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
 }
