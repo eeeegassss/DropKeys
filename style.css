@@ -1,104 +1,45 @@
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  font-family: 'Arial Black', sans-serif;
-  background: linear-gradient(to bottom, #0b001f, #000000);
-  color: white;
+  font-family: 'Helvetica', sans-serif;
+  background: #121212;
+  color: #fff;
   text-align: center;
   overflow: hidden;
 }
 
-h1.logo {
-  font-size: 3rem;
-  margin-top: 1rem;
-  color: #ffffff;
-  text-shadow: 0 0 12px #88f;
+h1, h2 {
+  margin-top: 40px;
 }
 
-.mode-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+.screen {
+  display: none;
+  padding: 20px;
 }
 
-.mode-btn {
-  padding: 12px 20px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #4444ff, #88f);
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
+.screen.active {
+  display: block;
+}
+
+button {
+  padding: 1em 2em;
+  margin: 1em;
+  font-size: 1.2em;
   border: none;
-  outline: none;
-  box-shadow: 0 0 12px white;
-  transition: transform 0.2s ease;
-}
-
-.mode-btn:active {
-  transform: scale(0.95);
-}
-
-#hud {
-  margin: 1rem 0;
-  font-size: 1.2rem;
-}
-
-#power-ups {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 0.5rem;
-}
-
-.power-up {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: gold;
-  box-shadow: 0 0 8px gold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-}
-
-#game-area {
-  position: relative;
-  height: 60vh;
-  overflow: hidden;
-}
-
-#keyboard, #keyboard2p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #222;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  z-index: 2;
-}
-
-#keyboard2p {
-  top: 0;
-  bottom: auto;
-}
-
-.key {
-  width: 48px;
-  height: 48px;
-  margin: 4px;
-  background: #333;
-  color: white;
-  font-size: 1.2rem;
   border-radius: 10px;
-  box-shadow: 0 0 6px #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
+  background-color: #ff5e5e;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e44;
+}
+
+input[type=range] {
+  width: 80%;
+  margin: 1em 0;
+}
+
+.hidden {
+  display: none;
 }
