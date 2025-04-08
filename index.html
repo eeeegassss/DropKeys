@@ -2,23 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#12112f" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropKeys</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="main-menu" class="menu">
-    <h1 class="logo">DROPKEYS</h1>
-    <div class="menu-buttons">
-      <button class="menu-btn survival">Survival</button>
-      <button class="menu-btn time-attack">Time Attack</button>
-      <button class="menu-btn endless">Endless</button>
-      <button class="menu-btn twoplayer">2 Player</button>
-    </div>
+  <div class="header">
+    <button class="menu-btn">☰</button>
+    <span class="title">DropKeys</span>
   </div>
 
-  <script src="game.js"></script>
+  <div class="game-grid">
+    <div class="game-button" style="background-image: url('images/survival.jpg')">
+      <span class="label">Survival</span>
+    </div>
+    <div class="game-button" style="background-image: url('images/time.jpg')">
+      <span class="label">Time Attack</span>
+    </div>
+    <div class="game-button" style="background-image: url('images/endless.jpg')">
+      <span class="label">Endless</span>
+    </div>
+    <div class="game-button" style="background-image: url('images/2player.jpg')">
+      <span class="label">2 Player</span>
+    </div>
+  </div>
 </body>
 </html>
