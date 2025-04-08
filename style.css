@@ -1,79 +1,35 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial Black', sans-serif;
-  background: radial-gradient(#000022, #000000);
-  color: white;
+  background: linear-gradient(to bottom, #2c003e, #000428);
   overflow: hidden;
-  touch-action: manipulation;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-top: 1.5rem;
-  text-shadow: 0 0 10px #00f, 0 0 20px #0ff;
-}
-
-.mode-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 2rem 1rem;
-  gap: 10px;
-}
-
-.mode-btn {
-  padding: 12px 20px;
-  border-radius: 16px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #0066ff, #66ccff);
-  border: none;
-  color: white;
-  box-shadow: 0 0 12px #00f;
-}
-
-.mode-btn:active {
-  transform: scale(0.95);
-}
-
-#hud {
-  text-align: center;
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: space-around;
-}
-
-#game-area {
+#game-container {
   position: relative;
-  height: 50vh;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
-#keyboard {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #111;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px 0;
-  border-top: 2px solid #444;
-}
-
-.key {
-  background: #333;
+/* Example of a glowing button */
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.5em;
   color: #fff;
-  width: 42px;
-  height: 42px;
-  margin: 5px;
-  font-size: 1.3rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 6px #00f;
-  user-select: none;
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.8);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 204, 1);
 }
