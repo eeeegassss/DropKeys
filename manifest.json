@@ -3,9 +3,9 @@
   "short_name": "DropKeys",
   "start_url": "index.html",
   "display": "standalone",
+  "background_color": "#0d001a",
+  "theme_color": "#4444ff",
   "orientation": "portrait",
-  "background_color": "#121212",
-  "theme_color": "#ff5e5e",
   "icons": [
     {
       "src": "icon-192.png",
