@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropKeys</title>
 
-  <!-- Favicon and app icon -->
-  <link rel="icon" href="icon.png" type="image/png" sizes="512x512">
-  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/icon.png" />
 
-  <!-- PWA manifest -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1b1c1d" />
 
-  <link rel="stylesheet" href="style.css">
-  <script src="game.js" defer></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header with hamburger and title -->
-  <header class="navbar">
-    <button class="hamburger" onclick="notify('Hamburger clicked')">
-      &#9776;
-    </button>
-    <h1 class="title-box">DropKeys</h1>
+
+  <header>
+    <div class="menu-icon">&#9776;</div>
+    <div class="title-pill">DropKeys</div>
   </header>
-  <!-- Divider line under header -->
-  <hr class="divider">
-  
-  <!-- Main menu: 2x2 grid of game mode buttons -->
-  <main class="mode-grid">
-    <div class="mode-card" onclick="notify('Survival clicked')">
-      <!-- The image background can be replaced by editing the inline style or through CSS -->
-      <img src="images/survival.jpg" alt="Survival Mode">
-      <span class="mode-title">Survival</span>
-    </div>
-    <div class="mode-card" onclick="notify('Time Attack clicked')">
-      <img src="images/time_attack.jpg" alt="Time Attack">
-      <span class="mode-title">Time Attack</span>
-    </div>
-    <div class="mode-card" onclick="notify('Endless clicked')">
-      <img src="images/endless.jpg" alt="Endless">
-      <span class="mode-title">Endless</span>
-    </div>
-    <div class="mode-card" onclick="notify('2 Player clicked')">
-      <img src="images/twoplayer.jpg" alt="2 Player">
-      <span class="mode-title">2 Player</span>
-    </div>
+  <hr class="divider" />
+
+  <main class="menu-grid" id="main-menu">
+    <button class="menu-button" id="survival-btn" style="background-image: url('assets/buttons/survival.jpg');">
+      <span class="mode-label survival">SURVIVAL</span>
+    </button>
+    <button class="menu-button" id="time-btn" style="background-image: url('assets/buttons/time.jpg');">
+      <span class="mode-label time">TIME ATTACK</span>
+    </button>
+    <button class="menu-button" id="endless-btn" style="background-image: url('assets/buttons/endless.jpg');">
+      <span class="mode-label endless">ENDLESS</span>
+    </button>
+    <button class="menu-button" id="two-player-btn" style="background-image: url('assets/buttons/2player.jpg');">
+      <span class="mode-label twoplayer">2 PLAYER</span>
+    </button>
   </main>
+
+  <div id="game-container" class="hidden">
+    <div id="game-header">
+      <button id="quit-btn">←</button>
+      <div id="game-info"></div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <div id="keyboard-helper"></div>
+  </div>
+
+  <script src="main.js" type="module"></script>
 </body>
 </html>
