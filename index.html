@@ -1,20 +1,47 @@
-<!-- Mode Selection Screen -->
-<div id="modeMenu" class="screen">
-  <h1>Choose Game Mode</h1>
-  <div class="mode-buttons">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>DropKeys</title>
+</head>
+<body>
+
+  <!-- Home Screen -->
+  <div id="homeScreen" class="screen active">
+    <h1>DropKeys</h1>
+    <button onclick="showScreen('modeMenu')">Play</button>
+  </div>
+
+  <!-- Game Mode Select -->
+  <div id="modeMenu" class="screen hidden">
+    <h2>Select Game Mode</h2>
     <button onclick="selectMode('survival')">Survival</button>
     <button onclick="selectMode('time')">Time Attack</button>
     <button onclick="selectMode('endless')">Endless</button>
+    <button onclick="showScreen('homeScreen')">Back</button>
   </div>
-</div>
 
-<!-- Difficulty Select Screen -->
-<div id="difficultyMenu" class="screen hidden">
-  <h1>Select Difficulty</h1>
-  <input type="range" min="1" max="3" value="2" id="difficultySlider" />
-  <p id="difficultyLabel">Medium</p>
-  <div class="play-buttons">
+  <!-- Difficulty Select -->
+  <div id="difficultyMenu" class="screen hidden">
+    <h2>Select Difficulty</h2>
+    <input type="range" min="1" max="3" value="2" id="difficultySlider" />
+    <p id="difficultyLabel">Medium</p>
     <button onclick="startGame()">Play</button>
     <button onclick="playWithFriend()">Play vs Friend</button>
+    <button onclick="showScreen('modeMenu')">Back</button>
   </div>
-</div>
+
+  <!-- Game Screen Placeholder -->
+  <div id="gameScreen" class="screen hidden">
+    <h2>Game Screen</h2>
+    <p>Mode: <span id="currentMode"></span></p>
+    <p>Difficulty: <span id="currentDifficulty"></span></p>
+    <button onclick="showScreen('homeScreen')">Exit</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
