@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#0b001f" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <title>DropKeys</title>
-</head>
-<body>
-  <main id="app">
-    <h1 class="logo">DROPKEYS</h1>
-    <div class="mode-buttons">
-      <button class="mode-btn" data-mode="survival">Survival</button>
-      <button class="mode-btn" data-mode="time">Time Attack</button>
-      <button class="mode-btn" data-mode="endless">Endless</button>
-      <button class="mode-btn" data-mode="2p">2 Player</button>
-    </div>
-    <div id="hud">
-      <p>Score: <span id="score">0</span></p>
-      <p>Combo: <span id="combo">1x</span></p>
-      <p>Lives: <span id="lives">3</span></p>
-      <div id="power-ups"></div>
-    </div>
-    <div id="game-area"></div>
-    <div id="keyboard"></div>
-    <div id="keyboard2p"></div>
-  </main>
-  <script src="game.js" defer></script>
-</body>
-</html>
+<!-- Mode Selection Screen -->
+<div id="modeMenu" class="screen">
+  <h1>Choose Game Mode</h1>
+  <div class="mode-buttons">
+    <button onclick="selectMode('survival')">Survival</button>
+    <button onclick="selectMode('time')">Time Attack</button>
+    <button onclick="selectMode('endless')">Endless</button>
+  </div>
+</div>
+
+<!-- Difficulty Select Screen -->
+<div id="difficultyMenu" class="screen hidden">
+  <h1>Select Difficulty</h1>
+  <input type="range" min="1" max="3" value="2" id="difficultySlider" />
+  <p id="difficultyLabel">Medium</p>
+  <div class="play-buttons">
+    <button onclick="startGame()">Play</button>
+    <button onclick="playWithFriend()">Play vs Friend</button>
+  </div>
+</div>
