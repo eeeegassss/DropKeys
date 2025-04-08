@@ -3,49 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DropKeys</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="icon.png" />
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#1b1c1d" />
+  <title>DropKeys</title>
 </head>
 <body>
-  <header>
-    <button id="menu-btn">&#9776;</button>
-    <div id="title-pill">DropKeys</div>
-  </header>
-  <hr />
-
-  <main id="menu-screen">
-    <div class="grid">
-      <div class="mode-btn" data-mode="survival">
-        <span class="label">SURVIVAL</span>
-        <img src="assets/buttons/survival.jpg" alt="Survival" />
-      </div>
-      <div class="mode-btn" data-mode="time">
-        <span class="label">TIME ATTACK</span>
-        <img src="assets/buttons/time.jpg" alt="Time Attack" />
-      </div>
-      <div class="mode-btn" data-mode="endless">
-        <span class="label">ENDLESS</span>
-        <img src="assets/buttons/endless.jpg" alt="Endless" />
-      </div>
-      <div class="mode-btn" data-mode="2p">
-        <span class="label">2 PLAYER</span>
-        <img src="assets/buttons/2p.jpg" alt="2 Player" />
-      </div>
+  <div id="menu">
+    <h1>DropKeys</h1>
+    <div class="menu-grid">
+      <button class="menu-btn survival">Survival</button>
+      <button class="menu-btn time">Time Attack</button>
+      <button class="menu-btn endless">Endless</button>
+      <button class="menu-btn two">2 Player</button>
     </div>
-  </main>
+  </div>
 
-  <main id="game-screen" class="hidden">
-    <div id="hud">
-      <span id="score">0</span>
-      <span id="status"></span>
-      <button id="quit-btn">Quit</button>
+  <div id="game">
+    <button id="backBtn">&#8592;</button>
+    <div id="statusBar">
+      <div id="gameInfo"></div>
+      <div id="scoreDisplay"></div>
     </div>
-    <canvas id="gameCanvas"></canvas>
+    <canvas id="gameCanvas" width="375" height="500"></canvas>
     <div id="keyboard"></div>
-  </main>
+  </div>
 
   <script src="game.js"></script>
 </body>
