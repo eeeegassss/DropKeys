@@ -1,44 +1,75 @@
+/* Base layout */
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #0d001a;
+  padding: 0;
+  background: linear-gradient(to bottom, #1b133d, #0c0923);
+  font-family: 'Montserrat', sans-serif;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Logo */
+.logo {
+  font-size: 2.8em;
+  margin-bottom: 40px;
   text-align: center;
-  padding: 30px;
-}
-
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #4444ff;
   color: white;
+  text-shadow: 0 0 10px #ffffff88;
+}
+
+/* Menu container */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button group */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base button style */
+.menu-btn {
+  width: 220px;
+  padding: 20px;
+  font-size: 1.2em;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
-  margin: 8px;
-  font-size: 16px;
-  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 12px white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #282049;
+  color: white;
+  position: relative;
 }
 
-button:hover {
-  background-color: #6666ff;
+/* Bounce animation on press */
+.menu-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px white;
 }
 
-input[type="range"] {
-  width: 80%;
-  margin: 10px auto;
+/* Game-specific button styles */
+.survival {
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  box-shadow: 0 0 10px #ff4e50aa;
 }
-
-.screen {
-  display: none;
+.time-attack {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  box-shadow: 0 0 10px #f7971eaa;
 }
-
-.screen.active {
-  display: block;
+.endless {
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  box-shadow: 0 0 10px #43cea2aa;
 }
-
-.hidden {
-  display: none;
+.twoplayer {
+  background: linear-gradient(to right, #e52d27, #b31217);
+  box-shadow: 0 0 10px #e52d27aa;
 }
