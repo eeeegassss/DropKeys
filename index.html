@@ -3,44 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#12112f" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
   <title>DropKeys</title>
 </head>
 <body>
-
-  <!-- Home Screen -->
-  <div id="homeScreen" class="screen active">
-    <h1>DropKeys</h1>
-    <button onclick="showScreen('modeMenu')">Play</button>
-  </div>
-
-  <!-- Game Mode Select -->
-  <div id="modeMenu" class="screen hidden">
-    <h2>Select Game Mode</h2>
-    <button onclick="selectMode('Survival')">Survival</button>
-    <button onclick="selectMode('Time Attack')">Time Attack</button>
-    <button onclick="selectMode('Endless')">Endless</button>
-    <button onclick="showScreen('homeScreen')">Back</button>
-  </div>
-
-  <!-- Difficulty Select -->
-  <div id="difficultyMenu" class="screen hidden">
-    <h2>Select Difficulty</h2>
-    <input type="range" min="1" max="3" value="2" id="difficultySlider" />
-    <p id="difficultyLabel">Medium</p>
-    <button onclick="startGame()">Play</button>
-    <button onclick="startGame(true)">Play vs Friend</button>
-    <button onclick="showScreen('modeMenu')">Back</button>
-  </div>
-
-  <!-- Game Screen -->
-  <div id="gameScreen" class="screen hidden">
-    <h2>Game Screen</h2>
-    <p>Mode: <span id="currentMode"></span></p>
-    <p>Difficulty: <span id="currentDifficulty"></span></p>
-    <p id="friendLabel" class="hidden">You are playing with a friend!</p>
-    <button onclick="showScreen('homeScreen')">Exit</button>
+  <div id="main-menu" class="menu">
+    <h1 class="logo">DROPKEYS</h1>
+    <div class="menu-buttons">
+      <button class="menu-btn survival">Survival</button>
+      <button class="menu-btn time-attack">Time Attack</button>
+      <button class="menu-btn endless">Endless</button>
+      <button class="menu-btn twoplayer">2 Player</button>
+    </div>
   </div>
 
   <script src="game.js"></script>
