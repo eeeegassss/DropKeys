@@ -1,22 +1,7 @@
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open('mini-games-cache').then(cache => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/style.css',
-        '/game.js',
-        '/manifest.json',
-        '/icon.png'
-      ]);
-    })
-  );
+self.addEventListener('install', event => {
+  console.log('Service worker installed.');
 });
 
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
-    })
-  );
+self.addEventListener('fetch', event => {
+  // For offline support, cache logic would go here
 });
