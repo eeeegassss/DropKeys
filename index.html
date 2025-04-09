@@ -4,57 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mini Game Hub</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
+
   <header class="top-bar">
-    <div class="energy">
-      <img src="icons/bolt.svg" alt="Energy" class="icon"/>
+    <img src="icons/menu.svg" alt="Menu" class="icon menu-icon" />
+
+    <div class="pill energy">
+      <img src="icons/bolt-blue.svg" alt="Energy" class="icon" />
       <span>0</span>
     </div>
-    <button class="remove-ads">REMOVE ADS</button>
+
+    <button class="pill remove-ads">
+      <img src="icons/crown-blue.svg" alt="Crown" class="icon" />
+      REMOVE ADS
+    </button>
   </header>
+  <div class="divider"></div>
 
   <main class="game-grid">
     <div class="game-card" style="background-color: #f99c8b;">
+      <h3 class="card-label">Darts</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/darts.jpg" alt="Darts"/>
       <h2 class="game-title">DARTS</h2>
     </div>
     <div class="game-card" style="background-color: #fde28a;">
+      <h3 class="card-label">Snake</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/snake.jpg" alt="Snake"/>
       <h2 class="game-title snake">SNAKE</h2>
     </div>
     <div class="game-card" style="background-color: #e79447;">
+      <h3 class="card-label">Color Cards</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/colorcards.jpg" alt="Color Cards"/>
       <h2 class="game-title">COLOR CARDS</h2>
     </div>
     <div class="game-card" style="background-color: #6e45c2;">
+      <h3 class="card-label">Color Connect</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/colorconnect.jpg" alt="Color Connect"/>
       <h2 class="game-title">COLOR CONNECT</h2>
     </div>
     <div class="game-card" style="background-color: #7b4fa8;">
+      <h3 class="card-label">Water Sort</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/watersort.jpg" alt="Water Sort"/>
       <h2 class="game-title">WATER SORT</h2>
     </div>
     <div class="game-card" style="background-color: #4b4f53;">
+      <h3 class="card-label">Block Fill</h3>
       <img class="star" src="icons/star.svg" alt="Star"/>
       <img class="game-img" src="images/blockfill.jpg" alt="Block Fill"/>
       <h2 class="game-title">BLOCK FILL</h2>
     </div>
   </main>
 
-  <script src="game.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('Service Worker Registered'));
     }
   </script>
+
 </body>
 </html>
